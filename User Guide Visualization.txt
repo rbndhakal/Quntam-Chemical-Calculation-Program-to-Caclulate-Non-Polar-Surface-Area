@@ -1,0 +1,45 @@
+USER GUIDE FOR VISUALIZATION SCRIPTS
+
+Both polviz.py and viz.py are python3 scripts and require the numpy module. After executed, required information will be requested interactively.
+
+################# Script polviz.py ##################################
+
+1. Reads *.cosmo files created by COSMO/Turbomole calculations, or *.cpcm files created by CPCM/Orca calculations. The full Orca output file is also required in the latter case.
+
+2. Creates a "*.viz.cosmo" file, used by TmoleX (COSMOview) to produce an image distinguishing nonpolar (green) and polar (blue) surfaces estimates. 
+ 
+Example of requested information for the provided input example file (out.cosmo):
+Enter program name. tur (Turbomole) or orc (Orca).
+tur
+Enter .cosmo filename, but without the .cosmo extension.
+out
+Enter treshold for segment charge density (e/Angstrom^2). 
+0.01
+
+output: file out.polviz.cosmo.
+
+################# Script viz.py ##################################
+  
+1. Reads *.cosmo files created by COSMO/Turbomole calculations, or *.cpcm files created by CPCM/Orca calculations. The full Orca output file is also required in the latter case.
+
+2. Creates a "*.spt" script, which should be read by Jmol. Internal, polar and nonpolar atoms will be colored yellow, red and blue, respectively. 
+
+3. Creates a "*.area.txt" file, which contains the polar and total areas for each atom.
+
+4. Prints to terminal the calculated total area, total polar area and their difference (should be equal to NPSA) of the molecule.
+
+Example of requested information for the provided input example file (out.cosmo):
+Enter program name. tur (Turbomole) or orc (Orca).
+tur
+Enter .cosmo filename.
+out.cosmo
+Enter treshold for segment charge density (e/Angstrom^2). 
+0.01
+Enter treshold for atom area, from 0 to 1. 
+0.5
+
+output: files out.cosmo.spt and out.cosmo.area.txt. Also, the following information is printed to terminal:
+In Angstrom^2
+Total area =  1923.5188100980006
+Total polar area =  257.94243384299995
+NPSA =  1665.5763762550007
