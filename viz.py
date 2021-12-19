@@ -1,4 +1,3 @@
-#Author: Daniel de C. A. valente, 2020
 
 import numpy as np
 
