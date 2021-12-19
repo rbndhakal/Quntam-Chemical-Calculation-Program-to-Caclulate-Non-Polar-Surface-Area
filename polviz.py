@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Author: Daniel de C. A. Valente, 2020.
-
 # This python3 script is part of the CS-NPSA package, distributed under the GNU General Public License, version 3 (2007), being provided "as is" and without warranties of any kind. For more details, see <https://www.gnu.org/licenses/>.
 
 # INSTRUCTIONS
